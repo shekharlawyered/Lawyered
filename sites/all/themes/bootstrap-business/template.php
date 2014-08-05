@@ -90,8 +90,8 @@ function bootstrap_business_process_html(&$vars) {
 function bootstrap_business_preprocess_page(&$vars) {
 
 	//added by HB
-	if (!empty($variables['node']) && !empty($variables['node']->type)) {
-    	$variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+	if (!empty($vars['node']) && !empty($vars['node']->type)) {
+    	$vars['theme_hook_suggestions'][] = 'page__node__' . $vars['node']->type;
   	}
   	//******************************************************************
   	
