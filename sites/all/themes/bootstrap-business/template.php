@@ -89,7 +89,14 @@ function bootstrap_business_process_html(&$vars) {
  */
 function bootstrap_business_preprocess_page(&$vars) {
 
-	/**
+	//added by HB
+	if (!empty($variables['node']) && !empty($variables['node']->type)) {
+    	$variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+  	}
+  	//******************************************************************
+  	
+  	
+  	/**
 	 * insert variables into page template.
 	 */
 	if($vars['page']['sidebar_first'] && $vars['page']['sidebar_second']) { 
@@ -186,9 +193,3 @@ function bootstrap_business_form_alter(&$form, &$form_state, $form_id) {
 }
 
 
-//custom function by HB
-function bootstrap_business_preprocess_page(&$variables) {
-  if (!empty($variables['node']) && !empty($variables['node']->type)) {
-    $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
-  }
-}
