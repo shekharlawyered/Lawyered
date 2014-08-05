@@ -184,3 +184,11 @@ function bootstrap_business_form_alter(&$form, &$form_state, $form_id) {
 	 	$form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
 	}
 }
+
+
+//custom function by HB
+function bootstrap_business_preprocess_page(&$variables) {
+	if (!empty($variables['node']) && !empty($variables['node']->type)) {
+		$variables['template_files'][] = "page-node-" . $variables['node']->type;
+	}
+}
