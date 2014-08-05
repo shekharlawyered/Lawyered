@@ -187,8 +187,8 @@ function bootstrap_business_form_alter(&$form, &$form_state, $form_id) {
 
 
 //custom function by HB
-function bootstrap_business_preprocess_page(&$variables) {
-	if (!empty($variables['node']) && !empty($variables['node']->type)) {
-		$variables['template_files'][] = "page-node-" . $variables['node']->type;
-	}
+function themename_preprocess_page(&$variables) {
+  if (!empty($variables['node']) && !empty($variables['node']->type)) {
+    $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+  }
 }
