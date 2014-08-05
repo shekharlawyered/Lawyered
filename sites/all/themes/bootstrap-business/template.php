@@ -89,14 +89,7 @@ function bootstrap_business_process_html(&$vars) {
  */
 function bootstrap_business_preprocess_page(&$vars) {
 
-	//added by HB
-	if (!empty($vars['node']) && !empty($vars['node']->type)) {
-    	$vars['theme_hook_suggestions'][] = 'page__node__' . $vars['node']->type;
-  	}
-  	//******************************************************************
-  	
-  	
-  	/**
+	/**
 	 * insert variables into page template.
 	 */
 	if($vars['page']['sidebar_first'] && $vars['page']['sidebar_second']) { 
