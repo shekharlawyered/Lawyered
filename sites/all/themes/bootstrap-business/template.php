@@ -91,7 +91,7 @@ function bootstrap_business_preprocess_page(&$vars, $hook) {
 
 	//added by HB
 	if (isset($vars['node']) && isset($vars['node']->type)) {
-    	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+    	$vars['theme_hook_suggestions'][] = 'page__node__' . $vars['node']->type;
   	}
   	//******************************************************************
   	
