@@ -1,4 +1,4 @@
-<article id="node-<?php print $node->nid; ?>no" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || !$page): ?>
   <header>
@@ -23,6 +23,7 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['field_tags']);
+      dsm($content);
       print render($content);
     ?>
   </div>
