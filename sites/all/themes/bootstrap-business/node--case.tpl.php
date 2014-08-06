@@ -4,6 +4,12 @@
 	background: #edd460;
 	color: #fff;
 	font-weight: bold;
+	padding: 1.6rem;
+}
+
+#proceeding{
+	background: #eee;
+	padding: 1.6rem;
 }
 </style>
 
@@ -36,15 +42,30 @@
       ?>
       <div class="container-fluid" id="detail-head">
       	<div class="row">
-      		<div class=".col-md-4">
+      		<div class="col-md-4">
       			#<?php print render($content['field_case_number'][0]['#markup']);?>
       		</div>
-      		<div class=".col-md-4">
+      		<div class="col-md-4">
       			<?php print render($content['field_court'][0]['#title']);?>
       		</div>
-      		<div class=".col-md-4">
-      			<?php print render($content['field_retained_for'][0]['#title']);?>
+      		<div class="col-md-4">
+      			<?php print render($content['field_reatined_for'][0]['#title']);?>
       		</div>
+      	</div>
+      </div>
+      
+      <div class="container-fluid" id="proceedings">
+      	<div class="row">
+      		<?php
+			$my_view_name = 'proceeding';
+			$my_display_name = 'page';
+			$my_view = views_get_view($my_view_name);
+			if ( is_object($my_view) ) {
+			  $my_view->set_display($my_display_name);
+			  $my_view->pre_execute();
+			  print $my_view->render($my_display_name);
+			}
+			?>
       	</div>
       </div>
       <?php 
