@@ -1,3 +1,10 @@
+<style>
+
+#detail-head{
+	background: #edd460
+}
+</style>
+
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || !$page): ?>
@@ -24,6 +31,10 @@
       hide($content['links']);
       hide($content['field_tags']);
       dsm($content);
+      ?>
+      <div class="container-fluid" id="detail-head">
+      	#<?php print render($content['field_case_number'][0]['#markup']);?>
+      </div>
       print render($content);
     ?>
   </div>
