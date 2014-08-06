@@ -1,7 +1,9 @@
 <style>
 
 #detail-head{
-	background: #edd460
+	background: #edd460;
+	color: #fff;
+	font-weight: bold;
 }
 </style>
 
@@ -33,10 +35,21 @@
       dsm($content);
       ?>
       <div class="container-fluid" id="detail-head">
-      	#<?php print render($content['field_case_number'][0]['#markup']);?>
+      	<div class="row">
+      		<div class=".col-md-4">
+      			#<?php print render($content['field_case_number'][0]['#markup']);?>
+      		</div>
+      		<div class=".col-md-4">
+      			<?php print render($content['field_court'][0]['#title']);?>
+      		</div>
+      		<div class=".col-md-4">
+      			<?php print render($content['field_retained_for'][0]['#title']);?>
+      		</div>
+      	</div>
       </div>
-      print render($content);
-    ?>
+      <?php 
+      	print render($content);
+      ?>
   </div>
 
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
