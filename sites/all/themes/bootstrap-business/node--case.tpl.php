@@ -54,6 +54,60 @@
       	</div>
       </div>
       
+      
+      <?php 
+      $timeline = array();
+      if(count($node->field_proceeding['und']) > 0){
+      	foreach($node->field_proceeding['und'] as $proceeding){
+			$date = $proceeding['node']->field_date['und']['0']['value'];
+			$date = new DateTime($date);
+			$key = $date->getTimestamp();
+			$timeline[$key] = $proceeding['node'];
+		}
+      }
+      
+	  if(count($node->field_judgement['und']) > 0){
+      	foreach($node->field_judgement['und'] as $judgement){
+			$date = $judgement['node']->field_date['und']['0']['value'];
+			$date = new DateTime($date);
+			$key = $date->getTimestamp();
+			$timeline[$key] = $judgement['node'];
+		}
+      }
+      
+      $timeline = krsort($timeline , SORT_DESC);
+      
+      if(count($timeline) > 0){
+		?>
+		<div class="container-fluid" id="detail-head">
+			
+		<?php 
+		$i = 0;
+		 foreach ($timeline as $item){
+		?>
+			<div class="row">
+				<div class="col-md-offset-5 col-md-2">
+				 <?php print $item->field_date['und']['0']['value'];?>
+				</div>
+			</div>
+			
+			<div class="row">
+				<?php if($i % 2 == 0){?>
+				<div class="col-md-offset-7 col-md-5">
+				<?php }else{?>
+				<div class="col-md-5">
+				<?php } ?>
+					<?php print $item->title;?>
+				
+				</div>
+			</div>
+				
+		<?php 	
+		 }
+       }
+       
+      
+      ?>
       <div class="container-fluid" id="proceedings">
       	<div class="row">
       		<?php
