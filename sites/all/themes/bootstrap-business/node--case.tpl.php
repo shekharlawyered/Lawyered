@@ -59,7 +59,7 @@
       $timeline = array();
       if(count($node->field_proceeding['und']) > 0){
       	foreach($node->field_proceeding['und'] as $proceeding){
-			$date = $proceeding['node']->field_date['und']['0']['value'];
+			$date = $proceeding['node']->field_date['und'][0]['value'];
 			$date = new DateTime($date);
 			$key = $date->getTimestamp();
 			$timeline[$key] = $proceeding['node'];
@@ -68,7 +68,7 @@
       
 	  if(count($node->field_judgement['und']) > 0){
       	foreach($node->field_judgement['und'] as $judgement){
-			$date = $judgement['node']->field_date['und']['0']['value'];
+			$date = $judgement['node']->field_date['und'][0]['value'];
 			$date = new DateTime($date);
 			$key = $date->getTimestamp();
 			$timeline[$key] = $judgement['node'];
@@ -88,7 +88,7 @@
 		?>
 			<div class="row">
 				<div class="col-md-offset-5 col-md-2">
-				 <?php print $item->field_date['und']['0']['value'];?>
+				 <?php print $item->field_date['und'][0]['value'];?>
 				</div>
 			</div>
 			
