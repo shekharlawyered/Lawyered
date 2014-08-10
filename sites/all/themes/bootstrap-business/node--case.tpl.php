@@ -77,13 +77,14 @@
       
       $timeline = krsort($timeline , SORT_DESC);
       
+      dsm($timeline);
       if(count($timeline) > 0){
 		?>
 		<div class="container-fluid" id="detail-head">
 			
 		<?php 
-		$i = 0;
-		 foreach ($timeline as $item){
+		$i = 1;
+		 foreach($timeline as $item){
 		?>
 			<div class="row">
 				<div class="col-md-offset-5 col-md-2">
@@ -103,6 +104,7 @@
 			</div>
 				
 		<?php 	
+		$i++;
 		 }
 		 ?>
 		 </div>
