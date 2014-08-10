@@ -106,10 +106,10 @@
 		 }
 		 ?>
 		 </div>
+	<?php 
        }
-       
-      
-      ?>
+    ?>
+    
       <div class="container-fluid" id="proceedings">
       	<div class="row">
       		<?php
