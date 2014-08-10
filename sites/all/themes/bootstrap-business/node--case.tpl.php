@@ -65,8 +65,6 @@
 			$timeline[$key] = $proceeding['node'];
 		}
       }
-      dsm($timeline);
-      
       
 	  if(count($node->field_judgement['und']) > 0){
       	foreach($node->field_judgement['und'] as $judgement){
@@ -77,10 +75,8 @@
 		}
       }
       
-      dsm($timeline);
-      $timeline = krsort($timeline , SORT_DESC);
+      krsort($timeline , SORT_DESC);
       
-      dsm($timeline);
       if(count($timeline) > 0){
 		?>
 		<div class="container-fluid" id="detail-head">
