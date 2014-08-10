@@ -38,7 +38,7 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['field_tags']);
-      dsm($content);
+      dsm($node);
       ?>
       <div class="container-fluid" id="detail-head">
       	<div class="row">
@@ -49,7 +49,7 @@
       			<?php print render($content['field_court'][0]['#title']);?>
       		</div>
       		<div class="col-md-4">
-      			<?php print render($content['field_reatined_for'][0]['#title']);?>
+      			<?php print render($content['field_retained_for'][0]['#title']);?>
       		</div>
       	</div>
       </div>
