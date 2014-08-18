@@ -18,7 +18,6 @@
 }
 
 .date{
-	background: #c9c6c6;
 	padding: 1.2rem;
 	color: #433e3d;
 	font-weight: 600;
@@ -111,16 +110,16 @@
 		 foreach($timeline as $key => $item){
 		?>
 			<div class="row">
-				<div class="col-md-offset-5 col-md-2 date">
+				<div class="col-md-offset-5 col-md-2 date badge">
 					<i class="fa fa-calendar"></i>
 				 	<?php print date('D, d M Y', $key);//$item->field_date['und'][0]['value'];?>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col-md-12 entry">
-					<h3 class="trigger-collapse"><?php print $item->title;?></h3>
-					<div class="collapsible entry-detail">
+				<div class="panel panel-default entry">
+					<div class="panel-heading trigger-collapse"><?php print $item->title;?></div>
+					<div class="collapsible entry-detail panel-body">
 						
 					</div>
 						
