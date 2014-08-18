@@ -63,16 +63,17 @@
 			$date = $proceeding_node->field_date['und'][0]['value'];
 			$date = new DateTime($date);
 			$key = $date->getTimestamp();
-			$timeline[$key] = $proceeding['node'];
+			$timeline[$key] = $proceeding_node;
 		}
       }
       
 	  if(count($node->field_judgement['und']) > 0){
       	foreach($node->field_judgement['und'] as $judgement){
-			$date = $judgement['node']->field_date['und'][0]['value'];
+			$judgement_node = node_load($judgement['nid']);
+			$date = $judgement_node->field_date['und'][0]['value'];
 			$date = new DateTime($date);
 			$key = $date->getTimestamp();
-			$timeline[$key] = $judgement['node'];
+			$timeline[$key] = $judgement_node;
 		}
       }
       
