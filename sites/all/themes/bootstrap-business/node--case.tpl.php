@@ -73,8 +73,8 @@
       		<div class="col-md-4">
       			<i class="fa fa-university"></i>
       			<?php print render($content['field_court'][0]['#title']);
-      			if($content->field_location['0']['lid'] != ""){
-					print render($content['field_court'][0]['#value']);
+      			if($node->field_location['und'][0]['lid'] != ""){
+					print ", ".location_load_location($node->field_location['und'][0]['lid']);
 				}
       			?>
       		</div>
