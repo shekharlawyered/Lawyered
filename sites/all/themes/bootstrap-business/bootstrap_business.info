@@ -9,6 +9,8 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = color/colors.css
 stylesheets[all][] = css/local.css
 
+scripts[] = bootstrap/js/jqury-migrate-1.2.1.js
+
 regions[pre_header_first] = Pre Header First
 regions[pre_header_second] = Pre Header Second
 regions[pre_header_third] = Pre Header Third
