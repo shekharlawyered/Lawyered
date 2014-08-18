@@ -130,19 +130,25 @@
 			<div class="row">
 				<div class="panel panel-default entry">
 					<div class="panel-heading trigger-collapse capitalize"><?php print $item->title;?></div>
-					<div class="collapsible entry-detail panel-body">
-						<ul class="list-group">
-							<?php 
-							foreach($item->field_key_points['und'] as $point){
-								print "<li class='list-group-item'>";
-									print $point['value'];
-								print "</li>";
-							}
-							?>
-						</ul>
-					</div>
+					<?php 
+					if(count($item->field_key_points['und']) > 0){
+					?>
+						<div class="collapsible entry-detail panel-body">
 						
-				
+							<ul class="list-group">
+								<?php 
+								foreach($item->field_key_points['und'] as $point){
+									print "<li class='list-group-item'>";
+										print $point['value'];
+									print "</li>";
+								}
+								?>
+							</ul>
+							
+						</div>
+					<?php
+				 	} 
+				 	?>
 				</div>
 			</div>
 				
