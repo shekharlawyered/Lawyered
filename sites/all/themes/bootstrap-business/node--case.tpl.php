@@ -74,7 +74,8 @@
       			<i class="fa fa-university"></i>
       			<?php print render($content['field_court'][0]['#title']);
       			if($node->field_location['und'][0]['lid'] != ""){
-					print ", ".location_load_location($node->field_location['und'][0]['lid']);
+					$location = location_load_location($node->field_location['und'][0]['lid']);
+					print ", ".$location['province_name'];
 				}
       			?>
       		</div>
