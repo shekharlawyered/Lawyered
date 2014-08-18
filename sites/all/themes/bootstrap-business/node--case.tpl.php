@@ -34,6 +34,24 @@
 .capitalize{
 	text-transform: capitalize !important;
 }
+
+
+.entry .panel-heading{
+	font-size: 1.5em;
+}
+
+.entry .panel-heading .fa{
+	margin-right: 1em;
+	padding: 4px 12px;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: #777;
+	border-radius: 10px;
+}
+
+
 </style>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -129,26 +147,35 @@
 			
 			<div class="row">
 				<div class="panel panel-default entry">
-					<div class="panel-heading trigger-collapse capitalize"><?php print $item->title;?></div>
 					<?php 
-					if(count($item->field_key_points['und']) > 0){
+					if($item->type == 'proceeding'){
 					?>
-						<div class="collapsible entry-detail panel-body">
-						
-							<ul class="list-group">
-								<?php 
-								foreach($item->field_key_points['und'] as $point){
-									print "<li class='list-group-item'>";
-										print $point['value'];
-									print "</li>";
-								}
-								?>
-							</ul>
+						<div class="panel-heading proceeding trigger-collapse capitalize"><i class="fa fa-legal"></i><?php print $item->title;?></div>
+						<?php 
+						if(count($item->field_key_points['und']) > 0){
+						?>
+							<div class="collapsible entry-detail  panel-body">
 							
-						</div>
-					<?php
-				 	} 
-				 	?>
+								<ul class="list-group">
+									<?php 
+									foreach($item->field_key_points['und'] as $point){
+										print "<li class='list-group-item'>";
+											print $point['value'];
+										print "</li>";
+									}
+									?>
+								</ul>
+								
+							</div>
+						<?php
+					 	} 
+					 }else if($item->type == 'judgement'){
+					 ?>
+						<div class="panel-heading trigger-collapse judgement capitalize"><i class="fa fa-flag"></i><?php print $item->title;?></div>
+						
+					<?php 
+					} 
+					?>
 				</div>
 			</div>
 				
