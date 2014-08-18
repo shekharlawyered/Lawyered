@@ -1,4 +1,5 @@
 <?php if (theme_get_setting('scrolltop_display')): ?>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></div>
 <?php endif; ?>
 
