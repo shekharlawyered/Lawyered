@@ -42,13 +42,13 @@
       ?>
       <div class="container-fluid" id="detail-head">
       	<div class="row">
-      		<div class="col-md-4">
+      		<div class="col-md-4 glyphicon glyphicon-briefcase">
       			#<?php print render($content['field_case_number'][0]['#markup']);?>
       		</div>
-      		<div class="col-md-4">
+      		<div class="col-md-4 fa fa-bank">
       			<?php print render($content['field_court'][0]['#title']);?>
       		</div>
-      		<div class="col-md-4">
+      		<div class="col-md-4 fa fa-graduation-cap">
       			<?php print render($content['field_retained_for'][0]['#title']);?>
       		</div>
       	</div>
@@ -81,7 +81,7 @@
       
       if(count($timeline) > 0){
 		?>
-		<div class="container-fluid" id="detail-head">
+		<div class="container-fluid" id="">
 			
 		<?php 
 		$i = 1;
