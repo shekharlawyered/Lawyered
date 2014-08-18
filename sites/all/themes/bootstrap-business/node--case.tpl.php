@@ -22,12 +22,14 @@
 	padding: 1.2rem;
 	color: #433e3d;
 	font-weight: 600;
+	margin-bottom: 1%;
 }
 
 .entry{
 	padding: 1.2rem;
 	background: #95b6e3;
 	font-weight: 600;
+	margin-bottom: 4%;
 }
 </style>
 
@@ -116,11 +118,7 @@
 			</div>
 			
 			<div class="row">
-				<?php if($i % 2 == 0){?>
-				<div class="col-md-offset-7 col-md-5 entry">
-				<?php }else{?>
-				<div class="col-md-5 entry">
-				<?php } ?>
+				<div class="col-md-12 entry">
 					<h3 class="trigger-collapse"><?php print $item->title;?></h3>
 					<div class="collapsible entry-detail">
 						
