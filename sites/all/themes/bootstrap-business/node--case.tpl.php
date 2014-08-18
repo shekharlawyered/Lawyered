@@ -1,15 +1,33 @@
 <style>
 
 #detail-head{
-	background: #edd460;
+	background: #61a9e3;
 	color: #fff;
 	font-weight: bold;
 	padding: 1.6rem;
+	text-align:center;
 }
 
 #proceeding{
 	background: #eee;
 	padding: 1.6rem;
+}
+
+#details{
+	margin-top: 5%;
+}
+
+.date{
+	background: #c9c6c6;
+	padding: 1.2rem;
+	color: #433e3d;
+	font-weight: 600;
+}
+
+.entry{
+	padding: 1.2rem;
+	background: #95b6e3;
+	font-weight: 600;
 }
 </style>
 
@@ -84,23 +102,24 @@
       
       if(count($timeline) > 0){
 		?>
-		<div class="container-fluid" id="">
+		<div class="container-fluid" id="details">
 			
 		<?php 
 		$i = 1;
 		 foreach($timeline as $item){
 		?>
 			<div class="row">
-				<div class="col-md-offset-5 col-md-2">
-				 <?php print $item->field_date['und'][0]['value'];?>
+				<div class="col-md-offset-5 col-md-2 date">
+					<i class="fa fa-calendar"></i>
+				 	<?php print $item->field_date['und'][0]['value'];?>
 				</div>
 			</div>
 			
 			<div class="row">
 				<?php if($i % 2 == 0){?>
-				<div class="col-md-offset-7 col-md-5">
+				<div class="col-md-offset-7 col-md-5 entry">
 				<?php }else{?>
-				<div class="col-md-5">
+				<div class="col-md-5 entry">
 				<?php } ?>
 					<?php print $item->title;?>
 				
