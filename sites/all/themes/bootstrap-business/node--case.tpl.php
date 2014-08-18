@@ -111,7 +111,7 @@
 			<div class="row">
 				<div class="col-md-offset-5 col-md-2 date">
 					<i class="fa fa-calendar"></i>
-				 	<?php print format_date($key,'Medium');//$item->field_date['und'][0]['value'];?>
+				 	<?php print date('D, d M Y');//$item->field_date['und'][0]['value'];?>
 				</div>
 			</div>
 			
