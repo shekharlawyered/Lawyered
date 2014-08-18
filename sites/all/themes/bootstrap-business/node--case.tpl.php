@@ -121,7 +121,11 @@
 				<?php }else{?>
 				<div class="col-md-5 entry">
 				<?php } ?>
-					<?php print $item->title;?>
+					<h3 class="trigger-collapse"><?php print $item->title;?></h3>
+					<div class="collapsible entry-detail">
+						
+					</div>
+						
 				
 				</div>
 			</div>
@@ -164,3 +168,11 @@
   <?php print render($content['comments']); ?>
 
 </article>
+
+<script>
+	$(document).on('ready',function(){
+		$('.trigger-collapsible').on('click',function(){
+			$(this).closest('.collapsible').collapse();
+		});
+	});
+</script>
