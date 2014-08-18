@@ -106,12 +106,12 @@
 			
 		<?php 
 		$i = 1;
-		 foreach($timeline as $item){
+		 foreach($timeline as $key => $item){
 		?>
 			<div class="row">
 				<div class="col-md-offset-5 col-md-2 date">
 					<i class="fa fa-calendar"></i>
-				 	<?php print $item->field_date['und'][0]['value'];?>
+				 	<?php print format_date($key,'Medium');//$item->field_date['und'][0]['value'];?>
 				</div>
 			</div>
 			
