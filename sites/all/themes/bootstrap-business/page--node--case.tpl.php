@@ -219,7 +219,7 @@
                       
                             <!-- #tabs -->
                             <?php if ($tabs):?>
-                                <div class="tabs">
+                                <div class="tabs hide">
                                 <?php print render($tabs); ?>
                                 </div>
                             <?php endif; ?>
