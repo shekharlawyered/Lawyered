@@ -42,13 +42,16 @@
       ?>
       <div class="container-fluid" id="detail-head">
       	<div class="row">
-      		<div class="col-md-4 glyphicon glyphicon-briefcase">
+      		<div class="col-md-4">
+      			<span class="glyphicon glyphicon-briefcase"></span>
       			#<?php print render($content['field_case_number'][0]['#markup']);?>
       		</div>
-      		<div class="col-md-4 fa fa-bank">
+      		<div class="col-md-4">
+      			<i class="fa fa-university"></i>
       			<?php print render($content['field_court'][0]['#title']);?>
       		</div>
-      		<div class="col-md-4 fa fa-graduation-cap">
+      		<div class="col-md-4">
+      			<i class="fa fa-graduation-cap"></i>
       			<?php print render($content['field_retained_for'][0]['#title']);?>
       		</div>
       	</div>
