@@ -30,6 +30,10 @@
 	font-weight: 600;
 	margin-bottom: 4%;
 }
+
+.capitalize{
+	text-transform: capitalize !important;
+}
 </style>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -58,6 +62,7 @@
       hide($content['links']);
       hide($content['field_tags']);
       dsm($node);
+      dsm($content);
       ?>
       <div class="container-fluid" id="detail-head">
       	<div class="row">
@@ -67,7 +72,11 @@
       		</div>
       		<div class="col-md-4">
       			<i class="fa fa-university"></i>
-      			<?php print render($content['field_court'][0]['#title']);?>
+      			<?php print render($content['field_court'][0]['#title']);
+      			if($content->field_location['0']['lid'] != ""){
+					print render($content['field_court'][0]['#value']);
+				}
+      			?>
       		</div>
       		<div class="col-md-4">
       			<i class="fa fa-graduation-cap"></i>
@@ -118,7 +127,7 @@
 			
 			<div class="row">
 				<div class="panel panel-default entry">
-					<div class="panel-heading trigger-collapse"><?php print $item->title;?></div>
+					<div class="panel-heading trigger-collapse capitalize"><?php print $item->title;?></div>
 					<div class="collapsible entry-detail panel-body">
 						
 					</div>
