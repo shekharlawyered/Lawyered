@@ -59,7 +59,8 @@
       $timeline = array();
       if(count($node->field_proceeding['und']) > 0){
       	foreach($node->field_proceeding['und'] as $proceeding){
-			$date = $proceeding['node']->field_date['und'][0]['value'];
+			$proceeding_node = node_load($proceeding['nid']);
+			$date = $proceeding_node->field_date['und'][0]['value'];
 			$date = new DateTime($date);
 			$key = $date->getTimestamp();
 			$timeline[$key] = $proceeding['node'];
