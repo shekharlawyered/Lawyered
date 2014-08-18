@@ -51,6 +51,10 @@
 	border-radius: 10px;
 }
 
+.entry-detail .list-group-item{
+	margin-bottom: 1%;
+}
+
 
 </style>
 
